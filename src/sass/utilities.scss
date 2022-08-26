@@ -1,0 +1,19 @@
+// https://medium.com/@bhargav3shah/scss-convert-pixel-values-to-rem-using-functions-f1cef575edfd
+@use "sass:math";
+
+$html-font-size-base: 16px;
+@function stripUnit($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size-base))}rem;
+}
+
+/*
+Usage:
+...
+    .component {
+        font-size: rem(14px); // or rem(14)
+    }
+...
+*/
