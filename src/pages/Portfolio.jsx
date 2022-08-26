@@ -1,9 +1,14 @@
 import React from 'react'
 
+import './Portfolio.scss';
+
 export default function Portfolio() {
   return (
-    <div>
-        List of all works
+    <div className='container'>
+        <h2>Portfolio</h2>
+        <div>
+            
+        </div>
     </div>
   )
 }

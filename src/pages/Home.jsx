@@ -16,9 +16,9 @@ export default function Home() {
                     setTitleClass("Home");
                 }}
             >
-                <a href="#">blog</a>
-                <a href="#">learning</a>
-                <a href="#">contact</a>
+                <Link to={'/blog'}>blog</Link>
+                <Link to={'/learning'}>learning</Link>
+                <Link to={'/contact'}>contact</Link>
             </nav>
             <div className="title">
                 <h1>
@@ -38,8 +38,8 @@ export default function Home() {
                 }}
             >
                 <Link to={'/portfolio'}>portfolio</Link>
-                <a href="#">about me</a>
-                <a href="#">about this site</a>
+                <Link to={'/about-me'}>about me</Link>
+                <Link to={'/about-this-site'}>about this site</Link>
             </nav>
         </div>
     );

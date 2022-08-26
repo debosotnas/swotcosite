@@ -1,10 +1,206 @@
 @use "../sass/index.scss" as *;
 
-.Section {
-    nav {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
+$bottom-anchor-movement: 5;
+$saturate-min: .2;
+$saturate-max: 1;
+
+@mixin create-btn-nav-anim($name, $sel, $angle) {
+
+    #{$sel} {
+        animation-name: #{$name}-anchor-hover-out;
     }
+    #{$sel}:hover {
+        animation-name: #{$name}-anchor-hover-in;
+    }
+
+    @keyframes #{$name}-anchor-hover-in {
+        to {
+            transform: rotate(0deg) translateY(#{$bottom-anchor-movement}px);
+            filter: saturate($saturate-max);
+        }
+        from {
+            transform: rotate(#{$angle}deg) translateY(0);
+            filter: saturate($saturate-min);
+        }
+    }
+    // by default
+    @keyframes #{$name}-anchor-hover-out {
+        to {
+            filter: saturate($saturate-min) translateY(0);
+            transform: rotate(#{$angle}deg);
+        }
+        from {
+            transform: rotate(0deg) translateY(#{$bottom-anchor-movement}px);
+            filter: saturate($saturate-max);
+        }
+    }  
+}
+
+.Section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    
+    a {
+        display: inline-block;
+        padding: rem(10) rem(20);
+        margin-left: rem(5);
+        text-decoration: none;
+        font-weight: 900;
+        color: $white;
+        animation-duration: .3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.78, -0.41, 0.44, 1.8);
+
+        &.blog {
+            background-color: $color-blog;
+        }
+        &.learning {
+            background-color: $color-learning;
+        }
+        &.contact {
+            background-color: $color-contact;
+        }
+        &.portfolio {
+            background-color: $color-portfolio;
+        }
+        &.about-me {
+            background-color: $color-aboutme;
+        }
+        &.about-this-site {
+            background-color: $color-aboutthissite;
+        }
+
+        &.blog-r {
+            transform: rotate(3deg);
+        }
+        &.learning-r {
+            transform: rotate(-2deg);
+        }
+        &.contact-r {
+            transform: rotate(1deg);
+        }
+        &.portfolio-r {
+            transform: rotate(-3deg);
+        }
+        &.about-me-r {
+            transform: rotate(2deg);
+        }
+        &.about-this-site-r {
+            transform: rotate(1deg);
+        }
+
+        &:not(.active) {
+            filter: saturate(.1);
+        }
+        &.active {
+            display: none;
+        }
+        &.home.active {
+            // filter: saturate(1) brightness(150%) contrast(120%);
+            filter: saturate(1) brightness(100%) contrast(119%);
+            display: inline-block;
+            // &.blog {
+            //     background: linear-gradient(to right, #000 0%, $color-blog 100%);
+            // }
+            // &.portfolio {
+            //     background: linear-gradient(to left, #555 0%, $color-portfolio 100%);
+            // }
+        }
+
+        &.dark {
+            background: linear-gradient(to right, #000 0%, #aaa 100%);
+        }
+    }
+
+    .home {
+        max-width: 150px;
+        text-align: center;
+        margin-left: 0;
+        padding: rem(5) rem(10);
+        font-weight: 900;
+        font-size: rem(20);
+        color: $white;
+
+        transform: rotate(-5deg);
+        // background-clip: text;
+        // -webkit-background-clip: text;
+        // color: transparent;        
+    }
+
+  }
+
+  footer {
+    text-align: center;
+    padding: rem(20);
+  }
+
+  // ----------------------------
+  @include create-btn-nav-anim('blog','.navs .blog', 3);
+  @include create-btn-nav-anim('learning','.navs .learning', -2);
+  @include create-btn-nav-anim('contact','.navs .contact', 1);
+  @include create-btn-nav-anim('portfolio','.navs .portfolio', -3);
+  @include create-btn-nav-anim('about-me','.navs .about-me', 2);
+  @include create-btn-nav-anim('about-this-site','.navs .about-this-site', 1);
+
+    // navs .blog {
+    //     transform: rotate(#{$angle}deg);
+    //     animation-name: #{$sel}-anchor-hover-out;
+    // }
+    // #{$sel}:hover {
+    //     animation-name: #{$sel}-anchor-hover-in;
+    // }
+
+
+    main {
+        padding: 20px 40px;
+        min-height: 80vh;
+
+        &.blog {
+            --primary-col: #{$color-blog};
+        }
+        &.learning {
+            --primary-col: #{$color-learning};
+        }
+        &.contact {
+            --primary-col: #{$color-contact};
+        }
+        &.portfolio {
+            --primary-col: #{$color-portfolio};
+        }
+        &.about-me {
+            --primary-col: #{$color-aboutme};
+        }
+        &.about-this-site {
+            --primary-col: #{$color-aboutthissite};
+        }
+
+        h2 {
+            text-align: right;
+            font-size: rem(40);
+            border-bottom: 1px dashed var(--primary-col);
+            padding-bottom: rem(20);
+            color: var(--primary-col);
+        }
+
+        &.portfolio h2 {
+            filter: brightness(85%);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    
 }
