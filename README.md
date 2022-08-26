@@ -1,5 +1,4 @@
-# Foobar
-
+# SWOTCO
 Swotco is the codebase for SomewhereOverTheCode site. A portfolio website from O.S.
 
 ## Installation
