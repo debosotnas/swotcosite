@@ -10,7 +10,7 @@ const sections = [
     '/blog',
     '/learning',
     '/contact',
-    '/portfolio',
+    '/works',
     '/about-me',
     '/about-this-site',
 ];
@@ -44,7 +44,7 @@ export default function Section() {
                         <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'blog')} to="/blog">blog</NavLink>
                         <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'learning')} to="/learning">learning</NavLink>
                         <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'contact')} to="/contact">contact</NavLink>
-                        <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'portfolio')} to="/portfolio">portfolio</NavLink>
+                        <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'works')} to="/works">works & tools</NavLink>
                         <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'about-me')} to="/about-me">about me</NavLink>
                         <NavLink className={({isActive}) => updateClassFromUrl(isActive, 'about-this-site')} to="/about-this-site">about this site</NavLink>
                     </div>

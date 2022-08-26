@@ -98,7 +98,7 @@ $saturate-max: 3;
         background-color: $color-contact;
     }
     .bottom-ctas a:nth-child(1) {
-        background-color: $color-portfolio;
+        background-color: $color-works;
     }
     .bottom-ctas a:nth-child(2) {
         background-color: $color-aboutme;
@@ -129,10 +129,19 @@ $saturate-max: 3;
     .title {
         cursor: default;
         background-image: url("../assets/bg-letters.svg");
+        // background-image: url("../assets/bg-letters-green.svg");
+        // background-image: url("../assets/bg-letters-cyan.svg");
+        background-size: cover;
+        background-position: center center;
 
-        filter: hue-rotate(0deg) grayscale(100%) brightness(55%) contrast(180%);
-        -webkit-filter: hue-rotate(0deg) grayscale(100%) brightness(55%)
+        filter: hue-rotate(-55deg) grayscale(100%) brightness(55%) contrast(180%);
+        -webkit-filter: hue-rotate(-55deg) grayscale(100%) brightness(55%)
             contrast(180%);
+        
+        // Basic OK
+        // filter: hue-rotate(0deg) grayscale(100%) brightness(55%) contrast(180%);
+        // -webkit-filter: hue-rotate(0deg) grayscale(100%) brightness(55%)
+        //     contrast(180%);
 
         transition: filter 0.3s ease-out;
         -webkit-transition: -webkit-filter 0.3s ease-out;
@@ -141,10 +150,6 @@ $saturate-max: 3;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-
-        // animation-name: simple-shake-in;
-        // animation-duration: .7s;
-        // animation-iteration-count:1;
 
         h1 {
             text-align: center;
@@ -162,34 +167,38 @@ $saturate-max: 3;
 
     &.yellow {
         .title {
-            filter: hue-rotate(0deg) grayscale(0%) brightness(75%)
-                contrast(180%); // yellow
-            -webkit-filter: hue-rotate(0deg) grayscale(0%) brightness(75%)
-                contrast(180%);
 
-            // animation-name: simple-shake-out;
-            // animation-iteration-count:infinite;
-            // animation-direction: alternate;
+            filter: hue-rotate(0deg) grayscale(0%) brightness(100%) contrast(100%); // yellow
+            -webkit-filter: hue-rotate(0deg) grayscale(0%) brightness(100%) contrast(100%);
 
-            // animation-duration: 1s;
-            // animation-iteration-count:infinite;
-            // animation-direction: alternate-reverse;
+            //-green.svg
+            // filter: hue-rotate(311deg) grayscale(0%) brightness(65%) contrast(380%); // yellow
+            // -webkit-filter: hue-rotate(311deg) grayscale(0%) brightness(65%) contrast(380%);
+
+            // Basic OK
+            // filter: hue-rotate(0deg) grayscale(0%) brightness(75%)
+            //     contrast(180%); // yellow
+            // -webkit-filter: hue-rotate(0deg) grayscale(0%) brightness(75%)
+            //     contrast(180%);
         }
     }
 
     &.violet {
         .title {
-            filter: hue-rotate(-160deg) grayscale(0%) brightness(61%)
-                contrast(422%);
-            -webkit-filter: hue-rotate(-160deg) grayscale(0%) brightness(61%)
-                contrast(422%);
+            filter: hue-rotate(-110deg) grayscale(0%) brightness(71%) contrast(200%);
+            -webkit-filter: hue-rotate(-110deg) grayscale(0%) brightness(71%) contrast(200%);
+
+            // -green.svg
+            // filter: hue-rotate(142deg) grayscale(0%) brightness(61%) contrast(352%);
+            // -webkit-filter: hue-rotate(142deg) grayscale(0%) brightness(61%) contrast(352%);
+
+            // Basic OK
+            // filter: hue-rotate(-160deg) grayscale(0%) brightness(61%)
+            //     contrast(422%);
+            // -webkit-filter: hue-rotate(-160deg) grayscale(0%) brightness(61%)
+            //     contrast(422%);
         }
 
-        // .top-ctas {
-        //     animation-name: simple-shake;
-        //     animation-duration: .3s;
-        //     animation-iteration-count: 1;
-        // }
     }
 }
 

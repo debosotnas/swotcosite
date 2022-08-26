@@ -1,7 +1,7 @@
 // https://h.asrvd.me/create-a-new-react-app-with-vite
 import Home from './pages/Home';
 import Section from './pages/Section';
-import Portfolio from './pages/Portfolio';
+import Works from './pages/Works';
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import "./App.scss";
@@ -12,12 +12,12 @@ function App() {
         <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/" element={<Section />}>
-                <Route path="/blog" element={<Portfolio />} />
-                <Route path="/learning" element={<Portfolio />} />
-                <Route path="/contact" element={<Portfolio />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/about-me" element={<Portfolio />} />
-                <Route path="/about-this-site" element={<Portfolio />} />
+                <Route path="/blog" element={<Works />} />
+                <Route path="/learning" element={<Works />} />
+                <Route path="/contact" element={<Works />} />
+                <Route path="/works" element={<Works />} />
+                <Route path="/about-me" element={<Works />} />
+                <Route path="/about-this-site" element={<Works />} />
             </Route>
         </Routes>
     );

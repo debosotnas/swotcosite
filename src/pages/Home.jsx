@@ -37,7 +37,7 @@ export default function Home() {
                     setTitleClass("Home");
                 }}
             >
-                <Link to={'/portfolio'}>portfolio</Link>
+                <Link to={'/works'}>works & tools</Link>
                 <Link to={'/about-me'}>about me</Link>
                 <Link to={'/about-this-site'}>about this site</Link>
             </nav>

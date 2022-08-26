@@ -1,11 +1,11 @@
 import React from 'react'
 
-import './Portfolio.scss';
+import './Works.scss';
 
-export default function Portfolio() {
+export default function Works() {
   return (
     <div className='container'>
-        <h2>Portfolio</h2>
+        <h2>Works & Tools</h2>
         <div>
             
         </div>
