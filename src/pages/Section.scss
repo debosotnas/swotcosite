@@ -137,6 +137,22 @@ $saturate-max: 1;
         // color: transparent;        
     }
 
+    .home:hover {
+        animation-name: home-shake;
+        animation-duration: 1;
+        animation-iteration-count: 1;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    @keyframes home-shake {
+        0% { transform: rotate(-12deg); }
+        20% { transform: rotate(2deg); }
+        40% { transform: rotate(-10deg); }
+        60% { transform: rotate(-2deg); }
+        80% { transform: rotate(-7deg); }
+        100% { transform: rotate(-5deg); }
+    }
+
   }
 
   footer {
@@ -188,7 +204,7 @@ $saturate-max: 1;
             text-align: right;
             font-size: rem(60);
             border-bottom: 1px dashed var(--primary-col);
-            padding-bottom: rem(20);
+            padding-bottom: rem(30);
             color: var(--primary-col);
             font-weight: 900;
             letter-spacing: rem(-2);
